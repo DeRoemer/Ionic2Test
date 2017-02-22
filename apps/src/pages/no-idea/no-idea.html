@@ -1,0 +1,48 @@
+<!--
+  Generated template for the NoIdea page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>noIdea</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let daten of data.data">
+      <p>{{daten.id}}</p>
+      <p>{{daten.vorname}}</p>
+      <p>{{daten.name}}</p>
+    </ion-item>
+  </ion-list>
+    <button primary (click)="data.load()">
+      hallo
+    </button>
+
+  <div *ngIf="data.loaddata != null">
+    <p> {{data.loaddata.hash}}</p>
+    <ion-list>
+      <ion-item *ngFor="let course of data.loaddata.courses" (click)="openItem(course)">
+        <div class="pull-left"><h3>{{course.Kursnummer}}</h3></div>
+        <div class="pull-right">Schuljahr {{course.Schuljahr}}</div>
+        <div class="clear"></div>
+        <h2 class="phlu-color" ng-bind-html="course.Kurstitel"></h2>
+        <div>Startet am {{course.Kursbeginn}}</div>
+        <div>
+          <span ng-bind-html="course.Kursstatus"></span>
+          <span ng-bind-html="'- Freie Plätze: '+course.FreiePlaetze" ng-if="course.FreiePlaetze.length>0"></span>
+        </div>
+
+        <i class="icon ion-ios-arrow-right phlu-color"></i>
+      </ion-item>
+    </ion-list>
+  </div>
+
+
+</ion-content>

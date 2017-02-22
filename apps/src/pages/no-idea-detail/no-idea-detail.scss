@@ -1,0 +1,25 @@
+page-no-idea-detail {
+
+
+
+
+  //Zielgruppen Icons
+  .ZG {
+    display: block;
+    height: 21px;
+    width: 29px;
+    line-height: 21px;
+    float: left;
+    font-size: $default-font-size - 3;
+    font-weight: bold;
+    text-align: center;
+    margin: 1px;
+    background-color: $wb-color-light;
+    color: $light;
+  }
+
+  .aktive-ZG {
+    background-color: $wb-color !important;
+  }
+
+}

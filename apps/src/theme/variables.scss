@@ -1,0 +1,271 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+$font-path: "../assets/fonts";
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #c41200,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+$toolbar-background: #c41200;
+$tabs-ios-background: #f4f4f4;
+$tabs-md-background: #f4f4f4;
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+
+//custom PH variables
+$ph-color: #9a7432 ;
+$ab-color: #ca3d56 ;
+$wb-color: #89abbb ;
+$fe-color: #9fac3c ;
+$dl-color: #d1b430 ;
+
+$ph-color-light: #d5b67f ;
+$ab-color-light: #e7a8b3 ;
+$wb-color-light: #d4e1e6 ;
+$fe-color-light: #d2da96 ;
+$dl-color-light: #eadc9f ;
+
+$ph-color-info: #735014 ;
+$ab-color-info: #8a0920 ;
+$wb-color-info: #37677e ;
+$fe-color-info: #505a02 ;
+$dl-color-info: #846c01 ;
+
+$bg-transparent: transparent;
+$info-red: #ff3b30 ;
+$info-grey: #999;
+$info-lightgrey: #bbb;
+$bg-inactive-grey: #f9f9f9 ;
+
+$default-font-size: 14px;
+
+
+//Mixin's
+@mixin dept-color($attr: 'background-color') {
+ .ph & {
+   #{$attr}: $ph-color;
+ }
+ .ab & {
+   #{$attr}: $ab-color;
+ }
+ .wb & {
+   #{$attr}: $wb-color;
+ }
+ .fe & {
+   #{$attr}: $fe-color;
+ }
+ .dl & {
+   #{$attr}: $dl-color;
+ }
+}
+
+@mixin dept-color-light($attr: 'background-color') {
+ .ph & {
+   #{$attr}: $ph-color-light;
+ }
+ .ab & {
+   #{$attr}: $ab-color-light;
+ }
+ .wb & {
+   #{$attr}: $wb-color-light;
+ }
+ .fe & {
+   #{$attr}: $fe-color-light;
+ }
+ .dl & {
+   #{$attr}: $dl-color-light;
+ }
+}
+
+@mixin dept-color-info($attr: 'background-color') {
+ .ph & {
+   #{$attr}: $ph-color-info;
+ }
+ .ab & {
+   #{$attr}: $ab-color-info;
+ }
+ .wb & {
+   #{$attr}: $wb-color-info;
+ }
+ .fe & {
+   #{$attr}: $fe-color-info;
+ }
+ .dl & {
+   #{$attr}: $dl-color-info;
+ }
+}
+
+@mixin dept-color-info-forced($attr: 'background-color') {
+ .ph & {
+   #{$attr}: $ph-color-info !important;
+ }
+ .ab & {
+   #{$attr}: $ab-color-info !important;
+ }
+ .wb & {
+   #{$attr}: $wb-color-info !important;
+ }
+ .fe & {
+   #{$attr}: $fe-color-info !important;
+ }
+ .dl & {
+   #{$attr}: $dl-color-info !important;
+ }
+}
+
+// custom PH-Styles
+.phlu-color, .phlu-card a, .popup a
+{
+  @include dept-color('color');
+}
+.phlu-bg-color {
+  @include dept-color();
+  &-info {
+    @include dept-color-info();
+  }
+  &-light {
+    @include dept-color-light();
+  }
+}
+
+.phlu-border-color {
+  @include dept-color('border-color');
+}
+
+.item-content .item-content.active, .item-content .item-content.activated, .item.activated, .item .item-content.activated {
+  @include dept-color-light();
+}
+
+.item {
+  &.inactive  {
+    background-color: $bg-inactive-grey;
+    // lesson in past
+    .info {
+      margin-top: -8px;
+      margin-bottom: 8px;
+      //padding: 4px;
+      //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+      //border-radius: 2px;
+      //.ion-alert-circled {
+      //  font-size: 24px;
+      //}
+      * {
+        @include dept-color-info-forced('color');
+      }
+    }
+    * {
+      color: $info-grey !important;
+    }
+  }
+}
+
+.color-light {
+  color: $light !important;
+}
+
+.border-color {
+  &-dark {
+    border-color: $dark !important;
+  }
+  &-light {
+    border-color: $light !important;
+  }
+}
+
+/*
+@mixin dept-loader-image {
+ .ph & {
+   background: url('../img/loader-ph.svg') center center no-repeat;
+ }
+ .ab & {
+   background: url('../img/loader-ab.svg') center center no-repeat;
+ }
+ .wb & {
+   background: url('../img/loader-wb.svg') center center no-repeat;
+ }
+ .fe & {
+   background: url('../img/loader-fe.svg') center center no-repeat;
+ }
+ .dl & {
+   background: url('../img/loader-dl.svg') center center no-repeat;
+ }
+}*/
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

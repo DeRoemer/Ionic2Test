@@ -1,0 +1,46 @@
+<!--
+  Generated template for the NoIdeaDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>noIdeaDetail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="list card phlu-card">
+    <div class="item">
+      <h3 class="text-wrapper" [innerHTML]="course.Hauptrubrik"></h3>
+      <h2 class="text-wrapper phlu-color" [innerHTML]="course.Kurstitel"></h2>
+    </div>
+
+    <!-- Zielgruppen -->
+    <div class="item">
+      <div [ngClass]="{'aktive-ZG': course.zKG  == 3}" class="ZG" (click)="showZgInfo('KG','Lehrpersonen Kindergarten')">KG</div>
+      <div [ngClass]="{'aktive-ZG': course.zBS  == 3}" class="ZG" (click)="showZgInfo('BS','Lehrpersonen Basisstufe')">BS</div>
+      <div [ngClass]="{'aktive-ZG': course.zUS  == 3}" class="ZG" (click)="showZgInfo('1/2','Lehrpersonen 1./2. Primar')">1/2</div>
+      <div [ngClass]="{'aktive-ZG': course.zM1  == 3}" class="ZG" (click)="showZgInfo('3/4','Lehrpersonen 3./4. Primar')">3/4</div>
+      <div [ngClass]="{'aktive-ZG': course.zM2  == 3}" class="ZG" (click)="showZgInfo('5/6','Lehrpersonen 5./6. Primar')">5/6</div>
+      <div [ngClass]="{'aktive-ZG': course.zS1  == 3}" class="ZG" (click)="showZgInfo('S1','Lehrpersonen SEK I')">S1</div>
+      <div [ngClass]="{'aktive-ZG': course.zS2B == 3}" class="ZG" (click)="showZgInfo('S2B','Lehrpersonen SEK II Berufsfachschulen')">S2B</div>
+      <div [ngClass]="{'aktive-ZG': course.zS2M == 3}" class="ZG" (click)="showZgInfo('S2M','Lehrpersonen SEK II Mittelschulen')">S2M</div>
+      <div [ngClass]="{'aktive-ZG': course.zIF  == 3}" class="ZG" (click)="showZgInfo('IF','Lehrpersonen für Integrative Förderung')">IF</div>
+      <div [ngClass]="{'aktive-ZG': course.zSHP == 3}" class="ZG" (click)="showZgInfo('SHP','Lehrpersonen für Schulische Heilpädagogik')">SHP</div>
+      <div [ngClass]="{'aktive-ZG': course.zLG  == 3}" class="ZG" (click)="showZgInfo('LG','Logopäd/-innen')">LG</div>
+      <div [ngClass]="{'aktive-ZG': course.zPMT == 3}" class="ZG" (click)="showZgInfo('PMT','Psychomotorik-Therapeut/-innen')">PMT</div>
+      <div [ngClass]="{'aktive-ZG': course.zDaZ == 3}" class="ZG" (click)="showZgInfo('DAZ','Deutsch als Zweitsprache')">DAZ</div>
+      <div [ngClass]="{'aktive-ZG': course.zTGS == 3}" class="ZG" (click)="showZgInfo('TGS','Mitarbeitende in Tageskursen')">TGS</div>
+      <div [ngClass]="{'aktive-ZG': course.zSSA == 3}" class="ZG" (click)="showZgInfo('SSA','Schulische Sozialarbeiter/-innen')">SSA</div>
+      <div [ngClass]="{'aktive-ZG': course.zSP  == 3}" class="ZG" (click)="showZgInfo('SP','Schulpsycholog/-innen')">SP</div>
+      <div [ngClass]="{'aktive-ZG': course.zSL  == 3}" class="ZG" (click)="showZgInfo('SL','Schulleitungen')">SL</div>
+      <div [ngClass]="{'aktive-ZG': course.zSB  == 3}" class="ZG" (click)="showZgInfo('SB','Schulbehörden')">SB</div>
+    </div>
+    
+  </div>
+</ion-content>
